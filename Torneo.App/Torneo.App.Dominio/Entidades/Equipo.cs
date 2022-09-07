@@ -7,4 +7,4 @@ namespace Torneo.App.Dominio
         public Municipio Municipio { get; set; }
         public DirectorTecnico DirectorTecnico { get; set; }
     }
-}
+} 

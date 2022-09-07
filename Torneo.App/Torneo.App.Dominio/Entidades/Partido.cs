@@ -9,4 +9,4 @@ public int MarcadorLocal { get; set; }
 public Equipo Visitante { get; set; }
 public int MarcadorVisitante { get; set; }
 }
-}
+} 

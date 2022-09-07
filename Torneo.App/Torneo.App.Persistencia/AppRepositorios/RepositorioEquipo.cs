@@ -26,4 +26,4 @@ namespace Torneo.App.Persistencia
             return equipos;
         }
     }
-}
+} 

@@ -1,4 +1,29 @@
 ﻿@page
 @model Torneo.App.Frontend.Pages.DTs.IndexModel
 @{
+
 }
+<h1>Listado de Directores tècnicos</h1>
+<table class="table table-success table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var DTs in Model.directortecnico)
+        {
+            <tr>
+                <th scope="row">@DTs.Id</th>
+                <td>@DTs.Nombre</td>
+                <td>
+                    <a class="btn btn-outline-success" asp-page="./Details" asp-route-id="@DTs.Id">
+                        Detalle
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

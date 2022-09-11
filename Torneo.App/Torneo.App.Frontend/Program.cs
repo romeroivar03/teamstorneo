@@ -1,5 +1,4 @@
 using Torneo.App.Persistencia;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -7,6 +6,9 @@ builder.Services.AddRazorPages();
 builder.Services.AddSingleton<IRepositorioMunicipio, RepositorioMunicipio>();
 builder.Services.AddSingleton<IRepositorioDT, RepositorioDT>();
 builder.Services.AddSingleton<IRepositorioEquipo, RepositorioEquipo>();
+
+
+builder.Services.AddSingleton<IRepositorioPartido, RepositorioPartido>();
 
 var app = builder.Build();
 

@@ -207,7 +207,7 @@ namespace Torneo.App.Consola
         {
             foreach (var jugador in _repoJugador.GetAllJugadores())
             {
-                Console.WriteLine(jugador.Id + " " + jugador.Nombre + " " + jugador.Numero + " " + jugador.Equipo.Nombre);
+                Console.WriteLine(jugador.Id + " " + jugador.Nombre + " " + jugador.Numero + " " + jugador.Equipo.Nombre );
             } 
         }
         private static void GetAllPartidos()

@@ -11,13 +11,8 @@ namespace Torneo.App.Persistencia
         {
             var equipolocalencontrado = _dataContext.Equipos.Find(local);
             var equipovisitanteencontrado = _dataContext.Equipos.Find(Visitante);
-            
-          
-            
             partido.Local = equipolocalencontrado;
             partido.Visitante = equipovisitanteencontrado;
-
-            
             var partidoInsertado = _dataContext.Partidos.Add(partido);
             _dataContext.SaveChanges();
             return partidoInsertado.Entity;
@@ -31,5 +26,11 @@ namespace Torneo.App.Persistencia
                 .ToList();
             return partidos;
         }
+
+        public Partido GetPartido(int idPartido)
+        {
+            var partidoEncontrado = _dataContext.Partidos.Find(idPartido);
+            return partidoEncontrado;
+        }
     }
-} 
+}

@@ -1,0 +1,16 @@
+﻿@page
+@model Torneo.App.Frontend.Pages.Posiciones.DetailsModel
+@{
+}
+<h1>Detalle de posiciones</h1>
+<table class="table table-success table-striped">
+    <tr>
+        <th scope="col">Id</th>
+        <td>@Model.posicion.Id</td>
+    </tr>
+    <tr>
+        <th scope="col">Nombre</th>
+        <td>@Model.posicion.Nombre</td>
+    </tr>
+</table>
+<a class="btn btn-outline-warning" asp-page="./Index">Volver</a>

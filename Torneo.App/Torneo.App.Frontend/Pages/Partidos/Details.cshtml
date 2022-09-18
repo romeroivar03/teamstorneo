@@ -5,23 +5,27 @@
 <h1>Detalle del partido</h1>
 <table class="table table-success table-striped">
     <tr>
-        <th scope="col">Id. Partido</th>
+        <th scope="col">Id. Partido:</th>
         <td>@Model.partido.Id</td>
     </tr>
     <tr>
-        <th scope="col">Equipo Local</th>
+        <th scope="col">Fecha y hora del partido:</th>
+        <td>@Model.partido.FechaHora</td>
+    </tr>
+    <tr>
+        <th scope="col">Equipo local:</th>
         <td>@Model.partido.Local.Nombre</td>
     </tr>
     <tr>
-        <th scope="col">Marcador Equipo Local</th>
+        <th scope="col">Marcador del equipo local:</th>
         <td>@Model.partido.MarcadorLocal</td>
     </tr>
     <tr>
-        <th scope="col">Equipo Visitante</th>
+        <th scope="col">Equipo visitante:</th>
         <td>@Model.partido.Visitante.Nombre</td>
     </tr>
     <tr> 
-        <th scope="col">Marcador Equipo Visitante</th>
+        <th scope="col">Marcador del equipo visitante:</th>
         <td>@Model.partido.MarcadorVisitante</td>
     </tr>
             

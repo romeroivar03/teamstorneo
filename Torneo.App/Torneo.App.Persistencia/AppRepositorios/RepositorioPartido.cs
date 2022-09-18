@@ -5,11 +5,10 @@ namespace Torneo.App.Persistencia
     public class RepositorioPartido : IRepositorioPartido
     {
         private readonly DataContext _dataContext = new DataContext();
-
-       // public Partido AddPartido(Partido partido, int idequipolocal, int idequipovisitante, int idEquipo)
-        public Partido AddPartido(Partido partido, int local, int Visitante)
+       
+        public Partido AddPartido(Partido partido, int Local, int Visitante)
         {
-            var equipolocalencontrado = _dataContext.Equipos.Find(local);
+            var equipolocalencontrado = _dataContext.Equipos.Find(Local);
             var equipovisitanteencontrado = _dataContext.Equipos.Find(Visitante);
             partido.Local = equipolocalencontrado;
             partido.Visitante = equipovisitanteencontrado;
@@ -17,7 +16,7 @@ namespace Torneo.App.Persistencia
             _dataContext.SaveChanges();
             return partidoInsertado.Entity;
         }
-
+        
         public IEnumerable<Partido> GetAllPartidos()
         {
         var partidos = _dataContext.Partidos
@@ -26,10 +25,23 @@ namespace Torneo.App.Persistencia
                 .ToList();
             return partidos;
         }
-
+        
         public Partido GetPartido(int idPartido)
         {
             var partidoEncontrado = _dataContext.Partidos.Find(idPartido);
+            return partidoEncontrado;
+        }
+
+        public Partido UpdatePartido(Partido partido, int Local, int Visitante)
+        {
+            var partidoEncontrado= GetPartido(partido.Id);
+            var equipoLocalEncontrado = _dataContext.Equipos.Find(Local);
+            var equipoVisitanteEncontrado = _dataContext.Equipos.Find(Visitante);
+            partidoEncontrado.FechaHora = partido.FechaHora;
+            partidoEncontrado.Local = equipoLocalEncontrado;
+            partidoEncontrado.MarcadorLocal = partido.MarcadorLocal;
+            partidoEncontrado.Visitante = equipoVisitanteEncontrado;
+            partidoEncontrado.MarcadorVisitante = partido.MarcadorVisitante;            
             return partidoEncontrado;
         }
     }

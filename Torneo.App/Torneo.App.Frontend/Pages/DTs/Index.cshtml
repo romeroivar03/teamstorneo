@@ -3,6 +3,7 @@
 @{
 
 }
+<a class="btn btn-secondary" asp-page="./Create">Crear Director Tecnico</a>
 <h1>Listado de Directores tècnicos</h1>
 <table class="table table-success table-striped">
     <thead>
@@ -13,13 +14,16 @@
         </tr>
     </thead>
     <tbody>
-        @foreach(var DTs in Model.directortecnico)
+        @foreach(var dt in Model.directortecnico)
         {
             <tr>
-                <th scope="row">@DTs.Id</th>
-                <td>@DTs.Nombre</td>
+                <th scope="row">@dt.Id</th>
+                <td>@dt.Nombre</td>
                 <td>
-                    <a class="btn btn-outline-success" asp-page="./Details" asp-route-id="@DTs.Id">
+                    <a class="btn btn-secondary" asp-page="./Edit" asp-route-id="@dt.Id">
+                        Editar
+                        </a>
+                    <a class="btn btn-outline-success" asp-page="./Details" asp-route-id="@dt.Id">
                         Detalle
                     </a>
                 </td>

@@ -7,20 +7,32 @@ namespace Torneo.App.Persistencia
         private readonly DataContext _dataContext = new DataContext();
 
         public DirectorTecnico AddDT(DirectorTecnico directorTecnico)
-        {
+            {
             var dtInsertado = _dataContext.DirectoresTecnicos.Add(directorTecnico);
             _dataContext.SaveChanges();
             return dtInsertado.Entity;
-        }
-
+            }
         public IEnumerable<DirectorTecnico> GetAllDTs()
-        {
-            return _dataContext.DirectoresTecnicos;
+            {
+                return _dataContext.DirectoresTecnicos;
+            }
+        public DirectorTecnico UpdateDT(DirectorTecnico dt){
+            var dtEncontrado = _dataContext.DirectoresTecnicos.Find(dt.Id);
+            if (dtEncontrado != null)
+            {
+                dtEncontrado.Nombre = dt.Nombre;
+                dtEncontrado.Documento = dt.Documento;
+                dtEncontrado.Telefono = dt.Telefono;
+                _dataContext.SaveChanges();
+            }
+            return dtEncontrado;
         }
-        public  DirectorTecnico GetAllDTs(int idDT)
-        {
-            var DTEncontrado = _dataContext.DirectoresTecnicos.Find(idDT);
-            return DTEncontrado;
+        public DirectorTecnico GetDT(int idDT)
+
+        {  
+             var dtEncontrado = _dataContext.DirectoresTecnicos.Find(idDT);
+            return dtEncontrado;
+        
         }
     }
 }

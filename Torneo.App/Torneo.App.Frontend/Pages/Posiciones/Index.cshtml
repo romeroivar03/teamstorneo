@@ -2,7 +2,8 @@
 @model Torneo.App.Frontend.Pages.Posiciones1.IndexModel
 @{
 }
-<h1>Listado de posicioness</h1>
+<a class="btn btn-primary" asp-page="./Create">Crear Posicion</a>
+<h1>Listado de posiciones</h1>
 <table class="table table-success table-striped">
     <thead>
         <tr>
@@ -12,7 +13,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach(var posicion in Model.posiciones)
+        @foreach (var posicion in Model.posiciones)
         {
             <tr>
                 <th scope="row">@posicion.Id</th>
@@ -20,6 +21,10 @@
                 <td>
                     <a class="btn btn-outline-success" asp-page="./Details" asp-route-id="@posicion.Id">
                         Detalle
+                    </a>
+               
+                    <a class="btn btn-secondary" asp-page="./Edit" asp-route-id="@posicion.Id">
+                        Editar
                     </a>
                 </td>
             </tr>

@@ -10,7 +10,9 @@
             <th scope="col">Id</th>
             <th scope="col">Fecha y Hora</th>
             <th scope="col">Equipo local</th>
+            <th scope="col">Marcador equipo local</th>
             <th scope="col">Equipo visitante</th>
+            <th scope="col">Marcador equipo visitante</th>
             <th scope="col">Acciones</th>
         </tr>
     </thead>
@@ -20,18 +22,18 @@
             <tr>
                 <th>@partido.Id</th>
                 <td>@partido.FechaHora</td>
-                <td>@partido.Local.Nombre</td>                
-                <td>@partido.Visitante.Nombre</td>                             
-            <td>
-                <a class="btn btn-outline-success" asp-page="./Details" asp-route-id="@partido.Id">
-                Detalle
-                </a>
-            </td>
-            <td>
-                <a class="btn btn-outline-info" asp-page="./Edit" asp-route-id="@partido.Id">
-                Editar
-                </a>
-            </td>
+                <td>@partido.Local.Nombre</td> 
+                <td>@partido.MarcadorLocal</td>               
+                <td>@partido.Visitante.Nombre</td>
+                <td>@partido.MarcadorVisitante</td>                             
+                <td>
+                    <a class="btn btn-outline-success" asp-page="./Details" asp-route-id="@partido.Id">
+                    Detalle
+                    </a>        
+                    <a class="btn btn-outline-info" asp-page="./Edit" asp-route-id="@partido.Id">
+                    Editar
+                    </a>
+                </td>
             </tr>
         }
     </tbody>
